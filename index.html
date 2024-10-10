@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Workspace</title>
+    <!-- Link to CSS (You can create a separate styles.css file) -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Include any necessary libraries, e.g., Socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h1>AI Workspace</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#containers">Containers</a></li>
+            <li><a href="#messages">Messages</a></li>
+            <li><a href="#profile">Profile</a></li>
+        </ul>
+        <div class="auth-buttons">
+            <button id="signup-btn">Sign Up</button>
+            <button id="login-btn">Login</button>
+        </div>
+    </nav>
+
+    <!-- Authentication Forms -->
+    <section id="auth-forms" class="hidden">
+        <!-- Sign Up Form -->
+        <div id="signup-form" class="form-container">
+            <h2>Sign Up</h2>
+            <form>
+                <input type="text" id="signup-username" placeholder="Username" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" required>
+                <button type="submit">Register</button>
+            </form>
+            <p>Already have an account? <a href="#" id="switch-to-login">Login here</a></p>
+        </div>
+
+        <!-- Login Form -->
+        <div id="login-form" class="form-container">
+            <h2>Login</h2>
+            <form>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="switch-to-signup">Sign up here</a></p>
+        </div>
+    </section>
+
+    <!-- Dashboard -->
+    <main id="dashboard" class="hidden">
+        <h2>Welcome, <span id="user-name">User</span>!</h2>
+        <div class="container-management">
+            <h3>Your Containers</h3>
+            <button id="create-container-btn">Create New Container</button>
+            <div id="containers-list">
+                <!-- Dynamically populated list of containers -->
+            </div>
+        </div>
+        
+        <!-- Real-Time Messaging -->
+        <div class="messaging">
+            <h3>Real-Time Messaging</h3>
+            <div id="messages-container">
+                <!-- Messages will appear here -->
+            </div>
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="Type your message..." autocomplete="off" required>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Profile Section -->
+    <section id="profile" class="hidden">
+        <h2>Your Profile</h2>
+        <p>Username: <span id="profile-username">User</span></p>
+        <p>Email: <span id="profile-email">user@example.com</span></p>
+        <button id="logout-btn">Logout</button>
+    </section>
+
+    <!-- Include JavaScript (You can create a separate script.js file) -->
+    <script src="script.js"></script>
+</body>
+</html>
